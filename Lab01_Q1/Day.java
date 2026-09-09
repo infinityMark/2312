@@ -40,11 +40,14 @@ public class Day {
 	{
 		if (m<1 || m>12 || d<1) return false;
 		switch(m){
+			// The month which only have 31 days.
 			case 1: case 3: case 5: case 7:
 			case 8: case 10: case 12:
 					 return d<=31; 
+			// The month which only have 30 days.
 			case 4: case 6: case 9: case 11:
 					 return d<=30; 
+			// The leaf month handle.
 			case 2:
 					 if (isLeapYear(y))
 						 return d<=29; 
