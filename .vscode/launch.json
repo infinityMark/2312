@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Lab01.Q6_A.Main",
+      "projectName": "2312_1213a43e"
+    },
+    {
       "name": "g++.exe - 生成和调试活动文件",
       "type": "cppdbg",
       "request": "launch",
@@ -20,7 +27,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build" // 这里对应 tasks.json 中的 label
+      "preLaunchTask": "build"
     }
   ]
 }
