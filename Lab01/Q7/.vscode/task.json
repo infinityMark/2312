@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "build",
+      "command": "D:\\Service\\language\\cpp\\package\\ucrt64\\bin\\g++.exe",
+      "args": [
+        "-g",
+        "${workspaceFolder}\\*.cpp",
+        "-o",
+        "${workspaceFolder}\\main.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "编译所有 .cpp 文件生成 main.exe"
+    }
+  ]
+}
