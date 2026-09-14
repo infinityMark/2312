@@ -1,4 +1,3 @@
-package Lab01.Q6_A;
 public class Main{
 
 	public static void main(String [] args) 

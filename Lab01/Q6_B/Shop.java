@@ -6,6 +6,12 @@ public class Shop {
 	    c.spend(value);
     };
 
+    public void earn(Group group, int value){
+        totalProfit += value;
+	    group.spend(value);
+    };
+
+
 	public int getProfit(){
         return totalProfit;
     };
