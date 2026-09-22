@@ -31,18 +31,29 @@ public class Team
 		return name;//Return the team name: return name;
 	}
 
-	public static Team[] createTeams(Student[] students) 
+	public static Team[] createTeams(Student[] students, int numberOfStudent, int numberInEachGroup) 
 	{
+        char teamLetter = 'A';
+        int groupNumber = numberOfStudent/numberInEachGroup;
 		Team[] result; //Define an array of teams to store the result: Team[] result;
-		result = new Team[5]; //Create the array: new Team[5];
-		
-		//Create the 5 teams
-		//Hint: "Arrays.copyOfRange(students, 0,6);" means to copy from position 0 inclusive to position 6 EXCLUSIVE
-		result[0]=new Team("Team A", Arrays.copyOfRange(students, 0,6)); //give team name and array of 6 students: "Team A", Arrays.copyOfRange(students, 0,6)
-		result[1]=new Team("Team B", Arrays.copyOfRange(students, 6,12));; //Create the second team : new Team("Team B", Arrays.copyOfRange(students, 6,12));
-		result[2]=new Team("Team C", Arrays.copyOfRange(students, 12,18));;
-		result[3]=new Team("Team D", Arrays.copyOfRange(students, 18,24));;
-		result[4]=new Team("Team E", Arrays.copyOfRange(students, 24,30));;
+		result = new Team[groupNumber]; //Create the array: new Team[5];
+        int start = 0, end = groupNumber;
+
+        for (int i = 0; i < groupNumber; i++) {
+		    result[i]=new Team("Team " + (char)(teamLetter + i), 
+                Arrays.copyOfRange(students, start, end));
+            start = end;
+            end += groupNumber;
+        }
+        
 		return result; //Return the result: return result;
-	}	
+	}
+
+    public static void teamsPrinter(Team[] teams){
+        // for (int i = 0; i < teams.length; i++) {
+        //     System.out.println(teams[i].toString());
+        // }
+        for (Team teamIteration: teams)
+            System.out.println(teamIteration.toString());
+    }
 }

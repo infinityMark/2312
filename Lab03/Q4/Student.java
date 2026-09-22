@@ -19,21 +19,18 @@ public class Student {
 	}
 	
 	//Static method for reading a list of students from the file and return an array of student objects
-	public static Student[] createStudentListFromFile(String filepathname) throws FileNotFoundException
-	{
-		int count;
-		
-		System.out.println("Total number of students: ");
+	public static Student[] createStudentListFromFile(String filepathname, int numberOfStudent) throws FileNotFoundException
+	{		
 		Scanner inFile = new Scanner(new File(filepathname));
 		
-		count=inFile.nextInt(); //read the count
+		inFile.nextInt(); //read the count
 		inFile.nextLine(); //skip line break (otherwise the first .nextLine in the following loop will read an empty line)
 
 		//Prepare the array of student object references
 		Student[] result; //An array of students: Student[] result;
-		result = new Student[count]; //Create the students array: new Student[count];		
+		result = new Student[numberOfStudent]; //Create the students array: new Student[count];		
 
-		for (int i=0;i<count;i++)
+		for (int i=0; i<numberOfStudent; i++)
 		{
 			String name = inFile.nextLine(); //Read a line of student name: inFile.nextLine();
 			result[i] = new Student(name); //Create a student object for result[i]: new Student(name);

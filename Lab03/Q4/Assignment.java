@@ -36,10 +36,10 @@ public class Assignment
 	public static Assignment[] decideTasks(Team[] teams, Scanner in)
 	{
 		Assignment[] assignments; //Define an array of assignments to store the result: Assignment[] assignments;
-		assignments = new Assignment[5]; //Create the array: new Assignment[5];
+		assignments = new Assignment[teams.length]; //Create the array: new Assignment[5];
 				
-		System.out.println("\nEnter 8 tasks for the teams (Lab05,Lab06,Lab07,): ");
-		for (int i=0; i<5; i++)
+		System.out.println("\nEnter 8 task names (eg. \"Lab05 Lab06 Lab07 ..\"): ");
+		for (int i=0; i<teams.length; i++)
 		{
 			System.out.print(teams[i].getName()+ ": "); //Prompt for a team: teams[i].getName()
 			String taskName = in.nextLine(); //Get user input of the task name from keyboard: in.next();
@@ -47,4 +47,18 @@ public class Assignment
 		}
 		return assignments; //Return the result: return assignments;
 	}
+
+    public static void assignmentPrinter(Assignment[] assignments){
+        for (Assignment assignment: assignments)
+            System.out.println(assignment.toString());
+    }
+
+    public static String[] getTaskList(Assignment[] assignments) {
+        String[] returnList = new String[assignments.length];
+
+        for (int i = 0; i<assignments.length; i++)
+            returnList[i] = assignments[i].getTaskName();
+        
+        return returnList;
+    }
 }
