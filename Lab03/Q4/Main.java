@@ -9,9 +9,9 @@ public class Main{
 		String filepathname = in.nextLine();
 
         int numberOfStudent, numberInEachGroup;
+        Scanner inFile = new Scanner(new File(filepathname));
 
         System.out.println("\nTotal number of students: ");
-		Scanner inFile = new Scanner(new File(filepathname));
         numberOfStudent = inFile.nextInt();
 
 		System.out.print("\nEnter the number of teams: ");
@@ -23,7 +23,7 @@ public class Main{
         }
 
 		Student[] students; //Define an array of students: Student[] students;
-		students = Student.createStudentListFromFile(filepathname, numberOfStudent); //Call the given static method in the Student class for reading from file: Student.createStudentListFromFile(filepathname);
+		students = Student.createStudentListFromFile(inFile, numberOfStudent); //Call the given static method in the Student class for reading from file: Student.createStudentListFromFile(filepathname);
 		
 		Team[] teams; //Define an array of teams: Team [] 
 		teams = Team.createTeams(students, numberOfStudent, numberInEachGroup);//Call the private method (one of the 3 methods in Main.java) to create the teams for students: createTeams(students);
