@@ -1,0 +1,37 @@
+===================================
+Given code for Day.java
+===================================
+
+(1) Add Accessor methods:
+
+public int getYear()  {return _______;}
+public int getMonth() {______________;}
+public int getDay()   {______________;}
+
+
+
+(2) Add a static method for reading day entries from a file
+
+public static Day[] createDayListFromFile(String filepathname) throws FileNotFoundException
+{
+	//Create a scanner object for reading file
+	Scanner inFile = new Scanner(_________); //replace the blank with: new File(filepathname)
+
+	int count=_____________________; //Read the count of entries: inFile.nextInt()
+
+	Day[] result; // set up an array of Day objects for returning the result
+	result = _______________; //Create an array of Day object references: new Day[count]
+		
+	for (_________________) //Loop a number of times based on the count
+	{
+		int y, m, d;
+		d=________________;//Read one integer from the file: inFile.nextInt()
+		m=________________;
+		y=________________;
+
+		result[i] = _____________;//Create a new day object: new Day(y,m,d)
+	}
+		
+	___________//Close the file: inFile.close();
+	___________//Return the data as an array of Day objects: return result;
+}	
