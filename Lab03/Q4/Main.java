@@ -8,6 +8,8 @@ public class Main{
 		Scanner in = new Scanner(System.in);
 		String filepathname = in.nextLine();
 
+		Scanner inFile = new Scanner(new File(filepathname));
+
 		Student[] students; //Define an array of students: Student[] students;
 		students = Student.createStudentListFromFile(filepathname); //Call the given static method in the Student class for reading from file: Student.createStudentListFromFile(filepathname);
 		
