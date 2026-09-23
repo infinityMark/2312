@@ -38,7 +38,7 @@ public class Assignment
 		Assignment[] assignments; //Define an array of assignments to store the result: Assignment[] assignments;
 		assignments = new Assignment[teams.length]; //Create the array: new Assignment[5];
 				
-		System.out.println("\nEnter 8 task names (eg. \"Lab05 Lab06 Lab07 ..\"): ");
+		System.out.println("\nEnter "+ teams.length +" task names (eg. \"Lab05 Lab06 Lab07 ..\"): ");
 		for (int i=0; i<teams.length; i++)
 		{
 			System.out.print(teams[i].getName()+ ": "); //Prompt for a team: teams[i].getName()

@@ -31,10 +31,10 @@ public class Team
 		return name;//Return the team name: return name;
 	}
 
-	public static Team[] createTeams(Student[] students, int numberOfStudent, int numberInEachGroup) 
+	public static Team[] createTeams(Student[] students, int numberInEachGroup) 
 	{
         char teamLetter = 'A';
-        int groupNumber = numberOfStudent/numberInEachGroup;
+        int groupNumber = students.length/numberInEachGroup;
 		Team[] result; //Define an array of teams to store the result: Team[] result;
 		result = new Team[groupNumber]; //Create the array: new Team[5];
         int start = 0, end = groupNumber;

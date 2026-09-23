@@ -8,25 +8,24 @@ public class Main{
 		Scanner in = new Scanner(System.in);
 		String filepathname = in.nextLine();
 
-        int numberOfStudent, numberInEachGroup;
-        Scanner inFile = new Scanner(new File(filepathname));
+        int numberInEachGroup;
 
-        System.out.println("\nTotal number of students: ");
-        numberOfStudent = inFile.nextInt();
-
-		System.out.print("\nEnter the number of teams: ");
-        numberInEachGroup = in.nextInt();
-
-        if (numberOfStudent % numberInEachGroup !=0) {
-		    System.out.printf("\nWrong input - It is not a factor of %d.", numberOfStudent);
-            return;
-        }
+        // System.out.println(numberOfStudent + " " +numberInEachGroup);
 
 		Student[] students; //Define an array of students: Student[] students;
-		students = Student.createStudentListFromFile(inFile, numberOfStudent); //Call the given static method in the Student class for reading from file: Student.createStudentListFromFile(filepathname);
+		students = Student.createStudentListFromFile(filepathname); //Call the given static method in the Student class for reading from file: Student.createStudentListFromFile(filepathname);
+        
+        System.out.print("\nEnter the number of teams: ");
+        numberInEachGroup = in.nextInt();
+
+        if ( (int)(students.length%numberInEachGroup) != 0) {
+		    System.out.printf("\nWrong input - It is not a factor of %d.", students.length);
+            in.close();
+            return;
+        }
 		
 		Team[] teams; //Define an array of teams: Team [] 
-		teams = Team.createTeams(students, numberOfStudent, numberInEachGroup);//Call the private method (one of the 3 methods in Main.java) to create the teams for students: createTeams(students);
+		teams = Team.createTeams(students, numberInEachGroup);//Call the private method (one of the 3 methods in Main.java) to create the teams for students: createTeams(students);
 		
 		//Print the grouping result:
 		System.out.println("\nGrouping result: ");				
