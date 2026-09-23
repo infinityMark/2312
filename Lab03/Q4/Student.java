@@ -21,12 +21,13 @@ public class Student {
 	//Static method for reading a list of students from the file and return an array of student objects
 	public static Student[] createStudentListFromFile(String filepathname) throws FileNotFoundException
 	{		
-        System.out.println("\nTotal number of students: ");
+        System.out.print("\nTotal number of students: ");
 		int cout;
         Scanner inFile = new Scanner(new File(filepathname));
 		
 		cout = inFile.nextInt(); //read the count
 		inFile.nextLine(); //skip line break (otherwise the first .nextLine in the following loop will read an empty line)
+        System.out.println(cout);
 
 		//Prepare the array of student object references
 		Student[] result; //An array of students: Student[] result;

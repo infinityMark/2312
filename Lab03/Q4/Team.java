@@ -31,15 +31,15 @@ public class Team
 		return name;//Return the team name: return name;
 	}
 
-	public static Team[] createTeams(Student[] students, int numberInEachGroup) 
+	public static Team[] createTeams(Student[] students, int numberOfGroup) 
 	{
         char teamLetter = 'A';
-        int groupNumber = students.length/numberInEachGroup;
+        int groupNumber = students.length/numberOfGroup;
 		Team[] result; //Define an array of teams to store the result: Team[] result;
-		result = new Team[groupNumber]; //Create the array: new Team[5];
+		result = new Team[numberOfGroup]; //Create the array: new Team[5];
         int start = 0, end = groupNumber;
 
-        for (int i = 0; i < groupNumber; i++) {
+        for (int i = 0; i < numberOfGroup; i++) {
 		    result[i]=new Team("Team " + (char)(teamLetter + i), 
                 Arrays.copyOfRange(students, start, end));
             start = end;

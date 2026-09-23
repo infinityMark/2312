@@ -1,4 +1,6 @@
+
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Assignment 
 {
@@ -37,8 +39,15 @@ public class Assignment
 	{
 		Assignment[] assignments; //Define an array of assignments to store the result: Assignment[] assignments;
 		assignments = new Assignment[teams.length]; //Create the array: new Assignment[5];
-				
+		
+        in.nextLine();
+
 		System.out.println("\nEnter "+ teams.length +" task names (eg. \"Lab05 Lab06 Lab07 ..\"): ");
+		System.out.print("\nEnter tasks for the teams (");
+        String str = in.nextLine();
+        String newStr = str.replace(" ", ",");
+        System.out.println(newStr + "):");
+        
 		for (int i=0; i<teams.length; i++)
 		{
 			System.out.print(teams[i].getName()+ ": "); //Prompt for a team: teams[i].getName()
@@ -59,6 +68,7 @@ public class Assignment
         for (int i = 0; i<assignments.length; i++)
             returnList[i] = assignments[i].getTaskName();
         
+        Arrays.sort(returnList);
         return returnList;
     }
 }
